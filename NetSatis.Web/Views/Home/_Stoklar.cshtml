@@ -1,0 +1,88 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-header">
+                Son eklenen 5 stok
+                <div class="btn-actions-pane-right">
+
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Stok Kodu</th>
+                            <th class="text-left">Stok Kodu - Barkod</th>
+                            <th class="text-left">Alış - Satış Kdv</th>
+                            <th class="text-left">Alış - Satış Fiyatı</th>
+                            <th class="text-left">Birim</th>
+                            <th class="text-left">Durumu</th>
+                            <th class="text-left">Ayrıntılar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var Stok in Model)
+                        {
+                        <tr>
+                            <td class="text-left text-muted">@Stok.StokKodu</td>
+                            @*Banka İSmi Ve aÇıklama*@
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">@Stok.StokAdi</div>
+                                            <div class="widget-subheading opacity-7">@Stok.Barkod</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">% @Stok.AlisKdv</div>
+                                            <div class="widget-subheading opacity-7">% @Stok.SatisKdv</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading"> @Stok.AlisFiyati1 TL</div>
+                                            <div class="widget-subheading opacity-7">@Stok.SatisFiyati1 TL</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="text-left">@Stok.Birimi</td>
+                            <td class="text-left">@Stok.Durumu</td>
+                            <td class="text-center">
+                                <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Detay</button>
+                            </td>
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-block text-center card-footer">
+
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-xl-4">
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

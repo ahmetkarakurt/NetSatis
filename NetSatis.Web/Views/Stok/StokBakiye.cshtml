@@ -1,0 +1,76 @@
+﻿@model IEnumerable<NetSatis.Web.Models.StokBakiye>
+@{
+    ViewBag.Title = "Stok Bakiye Litesi";
+}
+
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+        <h5 class="card-title">Stok Bakiye Litesi</h5>
+        @using (Html.BeginForm())
+        {
+            <div>
+                <div>
+
+
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3 mb-2">
+                    <input type="text" class="form-control" name="Stokara" placeholder="Stok Adı Barko Yada Stok Kodu Giriniz">
+
+                    <div class="valid-feedback">
+                        Kabul Edildi!
+                    </div>
+                    <div class="invalid-feedback">
+                        Stok Kodu Boş Geçilemez.
+                    </div>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <button class="btn btn-primary" type="submit">Getir</button>
+                </div>
+            </div>
+
+
+        }
+        <hr />
+        @{
+
+            var grid = new WebGrid(source: Model, rowsPerPage: 20);
+            @grid.GetHtml(tableStyle: "align-middle mb-0 table table-borderless table-striped table-hover", htmlAttributes: new { id = "grid" },
+            columns: grid.Columns(
+                 grid.Column(columnName: "StokKodu", header: "StokKodu"),
+                 grid.Column(columnName: "StokAdi", header: "StokAdi"),
+                 grid.Column(columnName: "Birimi", header: "Birimi", canSort: false),
+                 grid.Column(columnName: "StokGrubu", header: "Stok Grubu", canSort: false),
+                 grid.Column(columnName: "Barkod", header: "Barkod", canSort: false),
+                 grid.Column(columnName: "SatisKdv", header: "SatisKdv", canSort: false),
+                 grid.Column(columnName: "StokGiris", header: "StokGiris", canSort: false),
+                 grid.Column(columnName: "StokCikis", header: "StokCikis", canSort: false),
+                   grid.Column(columnName: "MevcutStok", header: "MevcutStok")
+
+
+
+                )
+
+            )
+
+
+        }
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+

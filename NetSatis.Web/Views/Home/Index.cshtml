@@ -1,0 +1,36 @@
+﻿@*model IEnumerable<NetSatis.Entities.Tables.Stok>*@
+@{
+    IEnumerable<NetSatis.Entities.Tables.Stok> stoks = ViewData["Stoklar"] as IEnumerable<NetSatis.Entities.Tables.Stok>;
+    IEnumerable<NetSatis.Web.Models.KasaDurum> kasas = ViewData["Kasa"] as IEnumerable<NetSatis.Web.Models.KasaDurum>;
+    IEnumerable<NetSatis.Web.Models.OdemeTuru> odemes = ViewData["KasaOdemeTuru"] as IEnumerable<NetSatis.Web.Models.OdemeTuru>;
+    IEnumerable<NetSatis.Web.Models.KasaDurumPos> KasaDurumPos = ViewData["KasaPos"] as IEnumerable<NetSatis.Web.Models.KasaDurumPos>;
+    IEnumerable<NetSatis.Web.Models.EncokSatan10> EncokSatan10 = ViewData["CokSatilan10"] as IEnumerable<NetSatis.Web.Models.EncokSatan10>;
+    IEnumerable<NetSatis.Web.Models.EncokSatan10> AzcokSatan10 = ViewData["AzSatilan10"] as IEnumerable<NetSatis.Web.Models.EncokSatan10>;
+    IEnumerable<NetSatis.Web.Models.EncokSatan10> GunEncokSatan10 = ViewData["GunCokSatilan10"] as IEnumerable<NetSatis.Web.Models.EncokSatan10>;
+    @*     IEnumerable<Dash.Models.ZZZ_TAHSILCEK> TahsilatCek = ViewData["TahsilCek"] as IEnumerable<Dash.Models.ZZZ_TAHSILCEK>;
+        IEnumerable<Dash.Models.ZZZ_PORTFOYCEK> PortfoyCekleri = ViewData["PortCek"] as IEnumerable<Dash.Models.ZZZ_PORTFOYCEK>;*@
+}
+
+
+
+@{
+    ViewBag.Title = "Genel Durum";
+}
+
+
+@Html.Partial("_KasaOdemeTur", odemes)
+@Html.Partial("_Kasalar", kasas)
+@Html.Partial("_KasaDurumPos", KasaDurumPos)
+@Html.Partial("_Stoklar", stoks)
+<div class="row">
+    <div class="col-md-6">
+        @Html.Partial("_EncokSatan10", EncokSatan10)
+    </div>
+    <div class="col-md-6">
+        @Html.Partial("_EnazSatan10", AzcokSatan10)
+    </div>
+</div>
+
+@Html.Partial("_GunEncokSatan10", GunEncokSatan10)
+
+

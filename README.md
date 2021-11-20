@@ -1,0 +1,2 @@
+# Sales
+Hızlı Satış Ekranı 

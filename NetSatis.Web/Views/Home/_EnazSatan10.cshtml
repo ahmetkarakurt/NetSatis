@@ -1,0 +1,37 @@
+﻿
+        <div class="main-card mb-3 card">
+            <div class="card-header">
+               Az Satılan Stok Listesi
+                <div class="btn-actions-pane-right">
+
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Stok Adı </th>
+                            <th class="text-left">Satış Miktarı</th>
+                            <th class="text-left">Satış Bakiyesi </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var Stok in Model)
+                        {
+                        <tr>
+                            <td class="text-left text-muted">@Stok.Stokadi</td>
+                            <td class="text-left text-muted">@Stok.StokAdeti</td>
+                            <td class="text-left text-muted">@Stok.SatisRakami</td>
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-block text-center card-footer">
+
+            </div>
+ 
+
+        </div>
